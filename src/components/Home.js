@@ -27,34 +27,34 @@ const Home = () => {
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
-		try {
-			// Make a POST request to check reservations
-			const response = await API.post('/Booking/CheckReservation', {
-				ArrivalDate: entryDate.format('YYYY-MM-DD'),
-				ArrivalTime: parseInt(entryTime.format('HH:mm'), 12),
-				LeavingDate: exitDate.format('YYYY-MM-DD'),
-				LeavingTime: parseInt(exitTime.format('HH:mm'), 12)
-			});
-
-			// Assuming your server responds with relevant data
-			// const isReservationAvailable = response.data.isReservationAvailable;
-			//
-			// if (isReservationAvailable) {
-			// 	// Navigate to the reservation page if available
-			// 	navigate('/reserve', { state: { entryDate, entryTime, exitDate, exitTime } });
-			// } else {
-			// 	// Show an alert or handle accordingly if not available
-			// 	alert('No reservations available for the selected date and time.');
-			// }
-		} catch (error) {
-			console.error('Error checking reservations:', error);
-			// Reset fields
-			setEntryDate(dayjs(''));
-			setEntryTime(dayjs(''));
-			setExitDate(dayjs(''));
-			setExitTime(dayjs(''));
-			// Handle error and display a message to the user
-		}
+		// try {
+		// 	// Make a POST request to check reservations
+		// 	const response = await API.post('/Booking/CheckReservation', {
+		// 		ArrivalDate: entryDate.format('YYYY-MM-DD'),
+		// 		ArrivalTime: parseInt(entryTime.format('HH:mm'), 12),
+		// 		LeavingDate: exitDate.format('YYYY-MM-DD'),
+		// 		LeavingTime: parseInt(exitTime.format('HH:mm'), 12)
+		// 	});
+		//
+		// 	// Assuming your server responds with relevant data
+		// 	// const isReservationAvailable = response.data.isReservationAvailable;
+		// 	//
+		// 	// if (isReservationAvailable) {
+		// 	// 	// Navigate to the reservation page if available
+		// 	// 	navigate('/reserve', { state: { entryDate, entryTime, exitDate, exitTime } });
+		// 	// } else {
+		// 	// 	// Show an alert or handle accordingly if not available
+		// 	// 	alert('No reservations available for the selected date and time.');
+		// 	// }
+		// } catch (error) {
+		// 	console.error('Error checking reservations:', error);
+		// 	// Reset fields
+		// 	setEntryDate(dayjs(''));
+		// 	setEntryTime(dayjs(''));
+		// 	setExitDate(dayjs(''));
+		// 	setExitTime(dayjs(''));
+		// 	// Handle error and display a message to the user
+		// }
 
 		// Log the values (for testing purposes)
 		console.log({ entryDate, entryTime, exitDate, exitTime });

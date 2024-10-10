@@ -14,7 +14,6 @@ import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
 import {orange} from "@mui/material/colors";
 import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
-import API from "../API/API";
 
 const Home = () => {
 	const [entryDate, setEntryDate] = useState(dayjs());
